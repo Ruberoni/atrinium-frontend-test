@@ -1,3 +1,4 @@
+import Header from "@/components/layout/Header";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={robotoFont.className}>
+        <Header />
         <main>{children}</main>
       </body>
     </html>
