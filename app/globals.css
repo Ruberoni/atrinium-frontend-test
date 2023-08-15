@@ -3,25 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --text-color-primary: 0, 0, 0;
+  --bg-color-primary: 255, 255, 255;
+
+  --color-primary-900: 50, 42, 8;
+  --color-primary-800: 99, 84, 15;
+  --color-primary-700: 149, 127, 23;
+  --color-primary-600: 198, 169, 30;
+  --color-primary-500: 248, 211, 38;
+  --color-primary-400: 249, 218, 71;
+  --color-primary-300: 250, 224, 103;
+  --color-primary-200: 251, 231, 136;
+  --color-primary-100: 252, 237, 168;
+  --color-primary: var(--color-primary-500);
+
+  --padding-primary: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--text-color-primary));
+  background-color: rgb(var(--bg-color-primary));
 }

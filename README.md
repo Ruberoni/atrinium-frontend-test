@@ -6,8 +6,11 @@ A SPA with Pokemons
 
 ## Features
 
-- [] Show a paginated list with basic information about Pokemons
-- [] Show detailed information about a Pokemon
+- [ ] Show a paginated list with basic information about Pokemons
+- [ ] Show detailed information about a Pokemon
+- [ ] Save already seen Pokemons
+- [ ] Show berries and items
+- [ ] Search by keywords
 
 ## Run locally
 
