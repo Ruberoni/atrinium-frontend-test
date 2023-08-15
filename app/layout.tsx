@@ -24,8 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={robotoFont.className}>
         <Header />
+        <BottomNav className="fixed bottom-0 left-0 right-0 lg:hidden" />
         <main>{children}</main>
-        <BottomNav className="absolute bottom-0 left-0 right-0 lg:hidden" />
       </body>
     </html>
   );

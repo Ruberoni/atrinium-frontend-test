@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import pokeballImage from "@/public/images/pokeball.png";
 import classNames from "classnames";
+import { NextLinkProps } from "@/types";
 
 export interface BottomNavProps {
   className?: string;
@@ -11,7 +12,7 @@ export default function BottomNav({ className }: BottomNavProps) {
   return (
     <nav
       className={classNames(
-        "px-primary flex h-14 w-full items-center justify-evenly border-t border-t-black",
+        "px-primary flex h-14 w-full items-center justify-evenly border-t border-t-black bg-white",
         className,
       )}
     >
@@ -28,7 +29,7 @@ export default function BottomNav({ className }: BottomNavProps) {
   );
 }
 
-export function BottomNavLink({ children, ...props }: any) {
+export function BottomNavLink({ children, ...props }: NextLinkProps) {
   return (
     <Link
       className="bg-primary-100 inline-flex rounded-lg px-2 py-1"

@@ -18,6 +18,8 @@
   --color-primary: var(--color-primary-500);
 
   --padding-primary: 16px;
+
+  --bottom-nav-height: calc(56px + 40px)
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -31,4 +33,17 @@
 body {
   color: rgb(var(--text-color-primary));
   background-color: rgb(var(--bg-color-primary));
+}
+
+main {
+  padding-bottom: var(--bottom-nav-height);
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  padding-left: var(--padding-primary);
+  padding-right: var(--padding-primary);
+  margin-left: auto;
+  margin-right: auto;
 }
