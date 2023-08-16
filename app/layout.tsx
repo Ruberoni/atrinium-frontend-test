@@ -1,8 +1,9 @@
-import Header from "@/components/layout/Header";
 import "./globals.css";
+import Header from "@/components/layout/Header";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import BottomNav from "@/components/layout/BottomNav";
+import ReactQueryProvider from "./ReactQueryProvider";
 
 const robotoFont = Roboto({
   weight: ["400", "700"],
@@ -21,11 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={robotoFont.className}>
-        <Header />
-        <BottomNav className="fixed bottom-0 left-0 right-0 lg:hidden" />
-        <main>{children}</main>
+        <ReactQueryProvider>
+          <Header />
+          <BottomNav className="fixed bottom-0 left-0 right-0 lg:hidden" />
+          <main>{children}</main>
+        </ReactQueryProvider>
       </body>
     </html>
   );
