@@ -49,12 +49,12 @@ export const bulbasaur: IPokemonDetail = {
     {
       value: 65,
       name: "special-attack",
-      translatedName: "Ataque especial",
+      translatedName: "Ataque E.",
     },
     {
       value: 65,
       name: "special-defense",
-      translatedName: "Defensa especial",
+      translatedName: "Defensa E.",
     },
     {
       value: 45,
