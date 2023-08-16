@@ -1,5 +1,5 @@
 import PokemonCard from "@/components/cards/PokemonCard";
-import { pokemonsList } from "@/mocks/pokemon";
+import { pokemonsList } from "@/mocks/pokemonSummary";
 
 export default function Home() {
   return (
