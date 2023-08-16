@@ -1,31 +1,67 @@
 import { IPokemonDetail } from "@/types";
 
+export const pokemonTypes = {
+  grass: {
+    id: 1,
+    name: "grass",
+    translatedName: "Planta",
+  },
+  poison: {
+    id: 2,
+    name: "poison",
+    translatedName: "Veneno",
+  },
+};
+
+export const pokemonAbilities = {
+  overgrow: {
+    name: "overgrow",
+    translatedName: "sobrecrecimiento",
+  },
+  chlorophyll: {
+    name: "chlorophyll",
+    translatedName: "clorofila",
+  },
+};
+
 export const bulbasaur: IPokemonDetail = {
   id: 1,
   name: "bulbasaur",
-  health: 100,
-  attack: 200,
-  specialAttack: 300,
-  defense: 400,
-  specialDefense: 500,
-  speed: 600,
-  height: 700,
-  weight: 800,
-  experience: 900,
-  types: [
+  height: 90,
+  weight: 80,
+  experience: 80,
+  stats: [
     {
-      slot: 1,
-      type: {
-        name: "grass",
-        url: "https://pokeapi.co/api/v2/type/12/",
-      },
+      value: 45,
+      name: "hp",
+      translatedName: "Vida",
     },
     {
-      slot: 2,
-      type: {
-        name: "poison",
-        url: "https://pokeapi.co/api/v2/type/4/",
-      },
+      value: 49,
+      name: "attack",
+      translatedName: "Ataque",
+    },
+    {
+      value: 49,
+      name: "defense",
+      translatedName: "Defensa",
+    },
+    {
+      value: 65,
+      name: "special-attack",
+      translatedName: "Ataque especial",
+    },
+    {
+      value: 65,
+      name: "special-defense",
+      translatedName: "Defensa especial",
+    },
+    {
+      value: 45,
+      name: "speed",
+      translatedName: "Velocidad",
     },
   ],
+  abilities: [pokemonAbilities.chlorophyll, pokemonAbilities.overgrow],
+  types: [pokemonTypes.grass, pokemonTypes.poison],
 };

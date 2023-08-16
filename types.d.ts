@@ -18,22 +18,34 @@ export interface IPokemonSummary {
   defense?: number;
 }
 
-export interface IPokemonType {
-  slot: number;
-  type: { name: string; url: string };
-}
-
 export interface IPokemonDetail {
   id: number;
   name: string;
-  health: number;
-  attack: number;
-  specialAttack: number;
-  defense: number;
-  specialDefense: number;
-  speed: number;
   height: number;
   weight: number;
   experience: number;
+  abilities: IPokemonDetailAbility[];
+  stats: IPokemonStat[];
   types: IPokemonType[];
+}
+
+export interface IPokemonDetailType {
+  slot: number;
+  type: { name: string; url: string };
+}
+export interface IPokemonType {
+  id: number;
+  name: string;
+  translatedName: string;
+}
+
+export interface IPokemonStat {
+  value: number;
+  name: string;
+  translatedName: string;
+}
+
+export interface IPokemonDetailAbility {
+  name: string;
+  translatedName: string;
 }
