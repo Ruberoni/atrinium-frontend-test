@@ -61,6 +61,12 @@ const pokeapi = {
 
     return pokemonsDataFormatted;
   },
+  usePokemonsSummaryListQuery(): UseQueryResult<IPokemonSummary[]> {
+    return useQuery({
+      queryKey: [POKEAPI_GET_POKEMON_QUERY],
+      queryFn: this.getPokemonsSummaryList,
+    });
+  },
 };
 
 export default pokeapi;

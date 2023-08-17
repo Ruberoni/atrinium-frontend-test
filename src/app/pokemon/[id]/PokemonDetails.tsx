@@ -4,8 +4,17 @@ import pokeapi from "@/src/services/pokeapi";
 import Image from "next/image";
 
 export default function PokemonDetails({ params }: { params: { id: string } }) {
-  const { data: pokemon } = pokeapi.usePokemonsDetailsQuery(params.id);
+  const { data: pokemon, error } = pokeapi.usePokemonsDetailsQuery(params.id);
   const pokemonImage = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon?.id}.svg`;
+
+  if (error) {
+    console.error(error);
+    return (
+      <section className="container pt-primary">
+        <h1 className="text-center text-2xl">Ha ocurrido un error</h1>
+      </section>
+    );
+  }
 
   if (!pokemon) {
     return (
@@ -60,7 +69,13 @@ function Hero({ image, name }: HeroProps) {
   return (
     <section className="relative overflow-hidden border-b-2 border-b-primary-700 bg-primary-100">
       <div className="container relative z-10 flex flex-col items-center gap-4 py-16 md:flex-row md:gap-10">
-        <Image src={image} alt={name} width="300" height="300" />
+        <Image
+          src={image}
+          alt={name}
+          width="300"
+          height="300"
+          className="h-[300px] w-[300px] object-contain"
+        />
         <h1 className="text-primary-900 md:text-7xl lg:text-9xl">{name}</h1>
       </div>
       <img

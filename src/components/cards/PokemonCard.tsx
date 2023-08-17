@@ -39,7 +39,7 @@ export default function PokemonCard({
   }
 
   return (
-    <article className="w-[180px] rounded-lg shadow-md shadow-black">
+    <article className="w-[220px] rounded-lg shadow-lg shadow-gray-300">
       <Link
         href={"/pokemon/" + id}
         className="flex h-[100px] items-center justify-center overflow-hidden"
@@ -49,14 +49,14 @@ export default function PokemonCard({
           alt={name}
           width="180"
           height="180"
-          className="w-full"
+          className="w-full h-[130px] object-contain"
         />
       </Link>
       <div className="flex flex-col items-center justify-center gap-3 p-3">
         <p className="text-lg">{name}</p>
         <ul className="flex flex-col gap-1 text-sm">
           {stats.map((stat) => (
-            <li key={stat.type}>
+            <li key={stat.type} className="text-center">
               {stat.text} {stat.value}
             </li>
           ))}
