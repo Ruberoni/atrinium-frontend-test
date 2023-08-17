@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={robotoFont.className}>
         <ReactQueryProvider>
           <Header />
-          <BottomNav className="fixed bottom-0 left-0 right-0 lg:hidden z-10" />
+          <BottomNav className="fixed bottom-0 left-0 right-0 lg:hidden z-20" />
           <main>{children}</main>
         </ReactQueryProvider>
       </body>

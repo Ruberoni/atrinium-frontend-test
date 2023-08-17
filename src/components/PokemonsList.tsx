@@ -3,10 +3,11 @@
 import { useQuery } from "@tanstack/react-query";
 import pokeapi from "@/src/services/pokeapi";
 import PokemonCard from "./cards/PokemonCard";
+import { POKEAPI_GET_POKEMON_QUERY } from "../constants";
 
 export default function PokemonsList() {
   const { data: pokemonsList, isLoading } = useQuery({
-    queryKey: ["pokemons-list"],
+    queryKey: [POKEAPI_GET_POKEMON_QUERY],
     queryFn: pokeapi.getPokemonsSummaryList,
   });
 

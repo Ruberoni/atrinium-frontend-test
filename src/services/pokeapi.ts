@@ -1,7 +1,12 @@
 import { IPokemonDetail, IPokemonSummary } from "@/src/types";
-import { POKEAPI_API_URL, POKEAPI_GET_POKEMONS_URL } from "@/src/constants";
+import {
+  POKEAPI_API_URL,
+  POKEAPI_GET_POKEMONS_URL,
+  POKEAPI_GET_POKEMON_QUERY,
+} from "@/src/constants";
 import axios from "axios";
 import { formatPokemonDetailsData, formatPokemonsSummaryData } from "../utils";
+import { UseQueryResult, useQuery } from "@tanstack/react-query";
 
 const pokeapiAxiosInstace = axios.create({
   baseURL: POKEAPI_API_URL,
@@ -35,6 +40,14 @@ const pokeapi = {
     );
 
     return pokemonDetailsDataFormatted;
+  },
+  usePokemonsDetailsQuery(
+    pokemonId: number | string,
+  ): UseQueryResult<IPokemonDetail> {
+    return useQuery({
+      queryKey: [POKEAPI_GET_POKEMON_QUERY, pokemonId],
+      queryFn: () => this.getPokemonDetails(pokemonId),
+    });
   },
   async getPokemonsSummaryList(): Promise<IPokemonSummary[]> {
     const data = await pokeapiAxiosInstace.get(POKEAPI_GET_POKEMONS_URL);

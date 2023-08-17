@@ -11,7 +11,7 @@ export default function Header() {
   const isHomepage = pathname === "/";
 
   return (
-    <header className="w-full  border-b border-b-black bg-white">
+    <header className="w-full border-b border-b-black bg-white sticky top-0 z-20">
       <nav className="container flex h-14  justify-between overflow-hidden">
         <Link href="/" className="relative top-1 block w-[73px]">
           <Image src={pikachuImage} alt="Inicio" className="w-[73px]" />
