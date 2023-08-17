@@ -1,4 +1,4 @@
-import { IPokemonSummary } from "@/types";
+import { IPokemonSummary } from "@/src/types";
 
 export const bulbasaur: IPokemonSummary = {
   id: 1,

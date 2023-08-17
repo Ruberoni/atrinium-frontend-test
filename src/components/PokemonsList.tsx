@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import pokeapi from "@/services/pokeapi";
+import pokeapi from "@/src/services/pokeapi";
 
 export default function PokemonsList() {
   const { data } = useQuery({

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import pokeballImage from "@/public/images/pokeball.png";
 import classNames from "classnames";
-import { NextLinkProps } from "@/types";
+import { NextLinkProps } from "@/src/types";
 
 export interface BottomNavProps {
   className?: string;

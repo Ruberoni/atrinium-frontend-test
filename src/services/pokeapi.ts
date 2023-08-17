@@ -1,6 +1,6 @@
-import { bulbasaur } from "@/mocks/pokemonDetails";
-import { IPokemonDetail, IPokemonSummary } from "@/types";
-import { POKEAPI_API_URL, POKEAPI_GET_POKEMONS_URL } from "@/constants";
+import { bulbasaur } from "@/src/mocks/pokemonDetails";
+import { IPokemonDetail, IPokemonSummary } from "@/src/types";
+import { POKEAPI_API_URL, POKEAPI_GET_POKEMONS_URL } from "@/src/constants";
 import axios from "axios";
 
 const pokeapiAxiosInstace = axios.create({

@@ -1,4 +1,4 @@
-import { IPokemonDetail } from "@/types";
+import { IPokemonDetail } from "@/src/types";
 
 export const pokemonTypes = {
   grass: {

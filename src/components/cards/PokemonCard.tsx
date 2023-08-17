@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ButtonLink from "../ButtonLink";
-import { IPokemonSummary } from "@/types";
+import { IPokemonSummary } from "@/src/types";
 
 export type PokemonCardProps = IPokemonSummary
 

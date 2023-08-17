@@ -1,8 +1,8 @@
 import "./globals.css";
-import Header from "@/components/layout/Header";
+import Header from "@/src/components/layout/Header";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import BottomNav from "@/components/layout/BottomNav";
+import BottomNav from "@/src/components/layout/BottomNav";
 import ReactQueryProvider from "./ReactQueryProvider";
 
 const robotoFont = Roboto({

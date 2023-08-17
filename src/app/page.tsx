@@ -1,4 +1,4 @@
-import PokemonsList from "@/components/PokemonsList";
+import PokemonsList from "@/src/components/PokemonsList";
 
 export default async function Home() {
   return (

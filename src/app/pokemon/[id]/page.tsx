@@ -1,4 +1,4 @@
-import pokeapi from "@/services/pokeapi";
+import pokeapi from "@/src/services/pokeapi";
 import Image from "next/image";
 
 export default async function Page({ params }: { params: { id: string } }) {
