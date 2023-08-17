@@ -40,6 +40,12 @@ main {
   padding-bottom: var(--bottom-nav-height);
 }
 
+@media (min-width: 1024px) {
+  main {
+    padding-bottom: 0;
+  }
+}
+
 .container {
   width: 100%;
   max-width: 1024px;

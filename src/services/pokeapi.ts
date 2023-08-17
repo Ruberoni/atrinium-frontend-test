@@ -12,6 +12,15 @@ const pokeapiAxiosInstace = axios.create({
   baseURL: POKEAPI_API_URL,
 });
 
+export interface IGetPokemonsSummaryListResponse {
+  count: number;
+  pokemonsList: IPokemonSummary[];
+}
+export interface IGetPokemonsSummaryListParams {
+  offset: number;
+  limit: number;
+}
+
 const pokeapi = {
   async getPokemonDetails(pokemonId: number | string): Promise<IPokemonDetail> {
     const pokemonData = await pokeapiAxiosInstace.get(
@@ -49,8 +58,12 @@ const pokeapi = {
       queryFn: () => this.getPokemonDetails(pokemonId),
     });
   },
-  async getPokemonsSummaryList(): Promise<IPokemonSummary[]> {
-    const data = await pokeapiAxiosInstace.get(POKEAPI_GET_POKEMONS_URL);
+  async getPokemonsSummaryList(
+    params: IGetPokemonsSummaryListParams = { limit: 20, offset: 0 },
+  ): Promise<IGetPokemonsSummaryListResponse> {
+    const data = await pokeapiAxiosInstace.get(POKEAPI_GET_POKEMONS_URL, {
+      params,
+    });
 
     const allPokemonsData = await Promise.all(
       data.data.results.map((pokemon: any) => axios.get(pokemon.url)),
@@ -59,12 +72,17 @@ const pokeapi = {
       allPokemonsData.map((axiosResponse) => axiosResponse.data),
     );
 
-    return pokemonsDataFormatted;
+    return {
+      count: data.data.count,
+      pokemonsList: pokemonsDataFormatted,
+    };
   },
-  usePokemonsSummaryListQuery(): UseQueryResult<IPokemonSummary[]> {
+  usePokemonsSummaryListQuery(
+    params: IGetPokemonsSummaryListParams = { limit: 20, offset: 0 },
+  ): UseQueryResult<IGetPokemonsSummaryListResponse> {
     return useQuery({
-      queryKey: [POKEAPI_GET_POKEMON_QUERY],
-      queryFn: this.getPokemonsSummaryList,
+      queryKey: [POKEAPI_GET_POKEMON_QUERY, params.limit, params.offset],
+      queryFn: () => this.getPokemonsSummaryList(params),
     });
   },
 };
