@@ -2,12 +2,21 @@
 
 import { useQuery } from "@tanstack/react-query";
 import pokeapi from "@/src/services/pokeapi";
+import PokemonCard from "./cards/PokemonCard";
 
 export default function PokemonsList() {
-  const { data } = useQuery({
+  const { data: pokemonsList } = useQuery({
     queryKey: ["pokemons-list"],
-    queryFn: pokeapi.getPokemonsList,
+    queryFn: pokeapi.getPokemonsSummaryList,
   });
 
-  return <p>{JSON.stringify(data)}</p>;
+  return (
+    <ul className="flex flex-wrap justify-center gap-x-9 gap-y-8 md:justify-between">
+      {pokemonsList?.map((pokemon) => (
+        <li key={pokemon.id}>
+          <PokemonCard {...pokemon} />
+        </li>
+      ))}
+    </ul>
+  );
 }

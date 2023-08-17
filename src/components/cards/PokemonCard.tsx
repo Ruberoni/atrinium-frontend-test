@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import ButtonLink from "../ButtonLink";
 import { IPokemonSummary } from "@/src/types";
+import { POKEMON_STATS_NAME } from "@/src/constants";
 
-export type PokemonCardProps = IPokemonSummary
+export type PokemonCardProps = IPokemonSummary;
 
 export default function PokemonCard({
   image,
@@ -15,17 +16,17 @@ export default function PokemonCard({
 }: PokemonCardProps) {
   let stats = [
     {
-      type: "health",
+      type: POKEMON_STATS_NAME.HP,
       text: "Vida",
       value: health,
     },
     {
-      type: "attack",
+      type: POKEMON_STATS_NAME.ATTACK,
       text: "Ataque",
       value: attack,
     },
     {
-      type: "defense",
+      type: POKEMON_STATS_NAME.DEFENSE,
       text: "Defensa",
       value: defense,
     },
@@ -34,13 +35,22 @@ export default function PokemonCard({
   stats = stats.filter((stat) => stat.value);
 
   if (!image) {
-    image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`
+    image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`;
   }
 
   return (
-    <article className="max-w-[180px] rounded-lg shadow-md shadow-black">
-      <Link href={"/pokemon/" + id} className="h-[100px] overflow-hidden flex items-center justify-center">
-        <Image src={image} alt={name} width="180" height="180" className="w-full" />
+    <article className="w-[180px] rounded-lg shadow-md shadow-black">
+      <Link
+        href={"/pokemon/" + id}
+        className="flex h-[100px] items-center justify-center overflow-hidden"
+      >
+        <Image
+          src={image}
+          alt={name}
+          width="180"
+          height="180"
+          className="w-full"
+        />
       </Link>
       <div className="flex flex-col items-center justify-center gap-3 p-3">
         <p className="text-lg">{name}</p>
@@ -51,9 +61,7 @@ export default function PokemonCard({
             </li>
           ))}
         </ul>
-        <ButtonLink href={"/pokemon/" + id}>
-          Ver más
-        </ButtonLink>
+        <ButtonLink href={"/pokemon/" + id}>Ver más</ButtonLink>
       </div>
     </article>
   );
