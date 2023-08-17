@@ -15,6 +15,7 @@
   --color-primary-300: 250, 224, 103;
   --color-primary-200: 251, 231, 136;
   --color-primary-100: 252, 237, 168;
+  --color-primary-50: 254, 251, 233;
   --color-primary: var(--color-primary-500);
 
   --padding-primary: 16px;

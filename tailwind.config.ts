@@ -10,6 +10,7 @@ const config: Config = {
       colors: {
         primary: {
           DEFAULT: "rgb(var(--color-primary))",
+          50: "rgb(var(--color-primary-50))",
           100: "rgb(var(--color-primary-100))",
           200: "rgb(var(--color-primary-200))",
           300: "rgb(var(--color-primary-300))",
@@ -33,5 +34,8 @@ const config: Config = {
     },
   },
   plugins: [],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 };
 export default config;
