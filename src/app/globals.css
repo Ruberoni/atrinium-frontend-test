@@ -20,7 +20,7 @@
 
   --padding-primary: 16px;
 
-  --bottom-nav-height: calc(56px + 40px)
+  --bottom-nav-height: calc(56px + 40px);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -59,4 +59,10 @@ h2 {
 
 h3 {
   font-size: 30px;
+}
+
+.skeleton {
+  border-radius: 12px;
+  background-color: rgb(229 231 235);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

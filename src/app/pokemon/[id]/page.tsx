@@ -9,19 +9,17 @@ export default async function Page({ params }: { params: { id: string } }) {
     <article className="">
       <Hero name={pokemon.name} image={pokemonImage} />
       <section className="container mt-10">
-        <div>
-          <ul className="mx-auto flex max-w-[500px] flex-wrap justify-center gap-10">
-            {pokemon.stats.map((stat) => (
-              <li
-                key={stat.name}
-                className="flex h-[120px] w-[120px] flex-col items-center justify-center rounded-full border-2 border-[#661800] bg-[#FFB8A2] text-lg font-bold text-[#661800] shadow-sm shadow-[#FFD7CA] transition duration-700 hover:-translate-y-3 hover:shadow-xl hover:shadow-[#FFD7CA]"
-              >
-                <span>{stat.translatedName}</span>
-                <span>{stat.value}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="mx-auto flex max-w-[500px] flex-wrap justify-center gap-10">
+          {pokemon.stats.map((stat) => (
+            <li
+              key={stat.name}
+              className="flex h-[120px] w-[120px] flex-col items-center justify-center rounded-full border-2 border-[#661800] bg-[#FFB8A2] text-lg font-bold text-[#661800] shadow-sm shadow-[#FFD7CA] transition duration-700 hover:-translate-y-3 hover:shadow-xl hover:shadow-[#FFD7CA]"
+            >
+              <span>{stat.translatedName}</span>
+              <span>{stat.value}</span>
+            </li>
+          ))}
+        </ul>
       </section>
       <section className="container mt-10 flex flex-wrap justify-center gap-16">
         <Card
@@ -52,9 +50,7 @@ function Hero({ image, name }: HeroProps) {
   return (
     <section className="relative overflow-hidden border-b-2 border-b-primary-700 bg-primary-100">
       <div className="container relative z-10 flex flex-col items-center gap-4 py-16 md:flex-row md:gap-10">
-        <div className="">
-          <Image src={image} alt={name} width="300" height="300" className="" />
-        </div>
+        <Image src={image} alt={name} width="300" height="300" />
         <h1 className="text-primary-900 md:text-7xl lg:text-9xl">{name}</h1>
       </div>
       <img
