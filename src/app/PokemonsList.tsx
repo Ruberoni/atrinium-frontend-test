@@ -21,10 +21,6 @@ export default function PokemonsList() {
   const pageCount = data ? Math.floor(data.count / limit) : 0;
 
   function handlePageClick(selectedItem: { selected: number }) {
-    console.log(
-      "🚀 ~ file: PokemonsList.tsx:15 ~ handleClick ~ e:",
-      selectedItem,
-    );
     setcurrentPage(selectedItem.selected);
   }
 
@@ -67,25 +63,23 @@ export default function PokemonsList() {
               </li>
             ))}
       </ul>
-      {!isLoading && (
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel=">"
-          previousLabel="<"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={2}
-          marginPagesDisplayed={1}
-          pageCount={pageCount}
-          renderOnZeroPageCount={null}
-          className="mt-10 flex justify-center"
-          breakLinkClassName={paginationLinkClassName}
-          previousLinkClassName={paginationLinkClassName}
-          nextLinkClassName={paginationLinkClassName}
-          pageLinkClassName={paginationLinkClassName}
-          disabledLinkClassName="opacity-50 hover:bg-primary-100"
-          activeLinkClassName="bg-primary-400 hover:bg-primary-400"
-        />
-      )}
+      <ReactPaginate
+        breakLabel="..."
+        nextLabel=">"
+        previousLabel="<"
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={2}
+        marginPagesDisplayed={1}
+        pageCount={pageCount}
+        renderOnZeroPageCount={null}
+        className="mt-10 flex justify-center"
+        breakLinkClassName={paginationLinkClassName}
+        previousLinkClassName={paginationLinkClassName}
+        nextLinkClassName={paginationLinkClassName}
+        pageLinkClassName={paginationLinkClassName}
+        disabledLinkClassName="opacity-50 hover:bg-primary-100"
+        activeLinkClassName="bg-primary-400 hover:bg-primary-400"
+      />
     </section>
   );
 }
