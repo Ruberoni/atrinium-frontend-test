@@ -12,3 +12,4 @@ export const POKEMON_STATS_NAME = {
 } as const;
 
 export const SPANISH_ISO_CODE = "es";
+export const LS_KEY_VISITED_POKEMONS = "SEEN_POKEMONS";

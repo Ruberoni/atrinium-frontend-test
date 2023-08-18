@@ -1,11 +1,17 @@
 "use client";
 
 import pokeapi from "@/src/services/pokeapi";
+import visitedPokemonsService from "@/src/services/visitedPokemons";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function PokemonDetails({ params }: { params: { id: string } }) {
   const { data: pokemon, error } = pokeapi.usePokemonsDetailsQuery(params.id);
   const pokemonImage = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon?.id}.svg`;
+
+  useEffect(() => {
+    pokemon && visitedPokemonsService.addVisited(pokemon?.id);
+  }, [pokemon]);
 
   if (error) {
     console.error(error);
