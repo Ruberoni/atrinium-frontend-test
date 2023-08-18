@@ -2,21 +2,23 @@
 
 # Pokemons
 
+> Visit this project hosted on Vercel through <https://atrinium-frontend-test.vercel.app/>
+
 A SPA with Pokemons
 
 ## Features
 
-- [ ] Show a paginated list with basic information about Pokemons
-- [ ] Show detailed information about a Pokemon
-- [ ] Save already seen Pokemons
+- [X] Show a paginated list with basic information about Pokemons
+- [X] Show detailed information about a Pokemon
+- [X] Save already seen Pokemons
 - [ ] Show berries and items
-- [ ] Search by keywords
+- [ ] Search pokemons, berries and items by keywords
 
 ## Run locally
 
 ### Requirements
 
-- Node.js 16.8 or later
+- Node.js 16.8 or later is needed for Next 13
 
 ### Steps
 
